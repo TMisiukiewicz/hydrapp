@@ -1,1 +1,8 @@
-{}
+{
+  "home": {
+    "dailyGoal": "Daily goal:",
+    "goalMl": "{value} ml",
+    "howMuchWater": "How much water will you drink today?",
+    "welcomeMessage": "Hello {name}!"
+  }
+}
