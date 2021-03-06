@@ -1,13 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import IntlProviderWrapper from './setup/intl/IntlProviderWrapper';
+import Navigation from './setup/navigation/Navigation';
+import UiWrapper from './setup/ui/UiWrapper';
 
 const App: React.FC = () => {
   return (
     <IntlProviderWrapper>
-      <View>
-        <Text>Open up App.tsx to start working on your app!</Text>
-      </View>
+      <UiWrapper>
+        <Navigation />
+      </UiWrapper>
     </IntlProviderWrapper>
   );
 };
