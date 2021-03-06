@@ -9,7 +9,9 @@
     "extract-messages": "cross-env NODE_ENV=development extract-messages --overwriteDefault=false -l=en -o ./setup/intl/languages -d en './{components,screens,setup}/**/*.{ts,tsx}'"
   },
   "dependencies": {
+    "@expo/metro-config": "^0.1.56",
     "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/bottom-tabs": "^5.11.8",
     "@react-navigation/native": "^5.9.3",
     "@react-navigation/stack": "^5.14.3",
     "expo": "~40.0.0",
@@ -23,6 +25,7 @@
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.9",
     "react-native-screens": "~2.15.2",
+    "react-native-svg": "12.1.0",
     "react-native-web": "~0.13.12",
     "styled-components": "^5.2.1"
   },
@@ -46,6 +49,7 @@
     "husky": "=4",
     "lint-staged": ">=10",
     "prettier": "^2.2.1",
+    "react-native-svg-transformer": "^0.14.3",
     "typescript": "~4.0.0"
   },
   "private": true,
