@@ -17,7 +17,6 @@ export const BackgroundBar = styled.View<ThemedView>`
 `;
 
 export const ForegroundBar: React.FC<ForegroundBarProps> = styled.View`
-  width: ${props => (props.percentage > 100 ? 100 : props.percentage)}%;
   height: 4px;
   background-color: ${props => props.theme.colors.blue};
   border-radius: 50px;

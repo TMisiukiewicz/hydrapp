@@ -1,14 +1,40 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { Animated } from 'react-native';
 import { useUserContext } from '../../../../../../setup/contexts/UserContext';
 import { BackgroundBar, ForegroundBar, ProgressBarContainer } from './styles';
+import { ForegroundBarProps } from './types';
 
 const ProgressBar: React.FC = () => {
   const { dailyPercentage } = useUserContext();
+  const progressWidth = useRef(new Animated.Value(dailyPercentage)).current;
+
+  const AnimatedForegroundBar: Animated.AnimatedComponent<
+    React.FC<ForegroundBarProps>
+  > = Animated.createAnimatedComponent(ForegroundBar);
+
+  useEffect(() => {
+    Animated.timing(progressWidth, {
+      toValue: dailyPercentage,
+      duration: 300,
+      useNativeDriver: false,
+    }).start();
+  }, [dailyPercentage, progressWidth]);
 
   return (
     <ProgressBarContainer>
       <BackgroundBar />
-      <ForegroundBar percentage={dailyPercentage} />
+      <AnimatedForegroundBar
+        style={{
+          width:
+            dailyPercentage < 100
+              ? progressWidth.interpolate({
+                  inputRange: [0, 100],
+                  outputRange: ['0%', '100%'],
+                })
+              : '100%',
+        }}
+        percentage={dailyPercentage}
+      />
     </ProgressBarContainer>
   );
 };
