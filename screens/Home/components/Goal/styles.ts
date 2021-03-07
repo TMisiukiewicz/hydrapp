@@ -5,6 +5,4 @@ export const GoalContainer: React.FC<ViewProps> = styled.View`
   padding-top: 30px;
 `;
 
-export default {
-  GoalContainer,
-};
+export default {};

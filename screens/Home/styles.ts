@@ -3,8 +3,9 @@ import { ImageBackgroundProps } from 'react-native';
 
 export const ScreenContainer: React.FC<ImageBackgroundProps> = styled.ImageBackground`
   height: 100%;
-  padding-top: 75px;
+  padding-top: 55px;
   padding-left: 35px;
+  padding-right: 35px;
 `;
 
 export default {};

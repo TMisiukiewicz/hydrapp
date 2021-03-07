@@ -1,10 +1,14 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Heading, Paragraph } from '../../../../setup/ui/styles';
+import { useUserContext } from '../../../../setup/contexts/UserContext';
+import { Heading, Paragraph, SubHeading } from '../../../../setup/ui/styles';
 import theme from '../../../../setup/ui/theme';
+import ProgressBar from './components/ProgressBar';
 import { GoalContainer } from './styles';
 
 const Goal: React.FC = () => {
+  const { goal, dailyPercentage } = useUserContext();
+
   return (
     <GoalContainer>
       <Paragraph>
@@ -14,9 +18,11 @@ const Goal: React.FC = () => {
         <FormattedMessage
           id='home.goalMl'
           defaultMessage='{value} ml'
-          values={{ value: 1800 }}
+          values={{ value: goal }}
         />
       </Heading>
+      <ProgressBar />
+      <SubHeading>{`${dailyPercentage}%`}</SubHeading>
     </GoalContainer>
   );
 };
