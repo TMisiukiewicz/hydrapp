@@ -1,5 +1,6 @@
 import React from 'react';
 import AddMore from './components/AddMore';
+import Droplet from './components/Droplet';
 import Goal from './components/Goal';
 import MainTitle from './components/MainTitle';
 import { ScreenContainer } from './styles';
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
     <ScreenContainer source={bgImage}>
       <MainTitle />
       <Goal />
+      <Droplet />
       <AddMore />
     </ScreenContainer>
   );

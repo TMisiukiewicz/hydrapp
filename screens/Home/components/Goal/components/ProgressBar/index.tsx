@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import { useUserContext } from '../../../../../../setup/contexts/UserContext';
+import { ANIMATION_TIMING } from '../../../../../../utils/consts';
 import { BackgroundBar, ForegroundBar, ProgressBarContainer } from './styles';
 import { ForegroundBarProps } from './types';
 
@@ -15,7 +16,7 @@ const ProgressBar: React.FC = () => {
   useEffect(() => {
     Animated.timing(progressWidth, {
       toValue: dailyPercentage,
-      duration: 300,
+      duration: ANIMATION_TIMING,
       useNativeDriver: false,
     }).start();
   }, [dailyPercentage, progressWidth]);

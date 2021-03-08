@@ -5,7 +5,7 @@ export const AddNewSection = styled.View`
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-top: 30px;
+  margin-top: 0px;
 `;
 
 export const AddNewRecordButton: React.FC<TouchableOpacityProps> = styled.TouchableOpacity`
